@@ -15,7 +15,9 @@ public class _01_RobotRace {
 	//1. make a main method
 	public static void main(String[] args) {
 		
-	
+		int bet = JOptionPane.showOptionDialog(null, "bet on one of these robots", "gambling", 0, 
+				JOptionPane.INFORMATION_MESSAGE, null, 
+				new String[] {"robot1", "robot2", "robot3", "robot4", "robot5"}, null);
 	//2. create an array of 5 robots.
 	Robot[] bots = new Robot[5];	
 	//3. use a for loop to initialize the robots.
@@ -23,7 +25,7 @@ public class _01_RobotRace {
 		bots[i] = new Robot();
 		bots[i].miniaturize();
 		bots[i].setSpeed(10);
-		bots[i].moveTo(100*i+100, 500);
+		bots[i].moveTo(100*i+100, 550);
 		bots[i].penDown();
 		//4. make each robot start at the bottom of the screen, side by side, facing up
 	}
@@ -41,28 +43,64 @@ public class _01_RobotRace {
 			q = bots[4].getY();
 			if (n<=50) {
 				JOptionPane.showMessageDialog(null, "N has won!");
-				System.exit(0);
+				if(bet == 0){
+					JOptionPane.showMessageDialog(null, "you won the bet");
+					System.exit(0);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "you lose the bet");
+					System.exit(0);
+				}
 			}
 			else if (u<=50) {
 				JOptionPane.showMessageDialog(null, "U has won!");
-				System.exit(0);
+				if(bet == 1){
+					JOptionPane.showMessageDialog(null, "you won the bet");
+					System.exit(0);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "you lose the bet");
+					System.exit(0);
+				}
 			}
 			else if (d<=50) {
 				JOptionPane.showMessageDialog(null, "D has won!");
-				System.exit(0);
+				if(bet == 2){
+					JOptionPane.showMessageDialog(null, "you won the bet");
+					System.exit(0);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "you lose the bet");
+					System.exit(0);
+				}
 			}
 			else if (t<=50) {
 				JOptionPane.showMessageDialog(null, "T has won!");
-				System.exit(0);
+				if(bet == 3){
+					JOptionPane.showMessageDialog(null, "you won the bet");
+					System.exit(0);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "you lose the bet");
+					System.exit(0);
+				}
 			}
 			else if (q<=50) {
 				JOptionPane.showMessageDialog(null, "Q has won!");
-				System.exit(0);
+				if(bet == 4){
+					JOptionPane.showMessageDialog(null, "you won the bet");
+					System.exit(0);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "you lose the bet");
+					System.exit(0);
+				}
 			}
 		}
+		
 	}
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
-
+	
 	//7. declare that robot the winner and throw it a party!
 
 	//8. try different races with different amounts of robots.
